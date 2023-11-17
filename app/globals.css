@@ -1,27 +1,53 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
+/* @font-face {
     font-family: Kaisei Tokumin;
     src: url("https://fonts.googleapis.com/css?family=Kaisei Tokumin");
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: Noto Sans;
+    src: url("https://fonts.googleapis.com/css2?family=Noto+Sans");
+    font-weight: normal;
+    font-style: normal;
+} */
+
+@layer base{
+    h1{
+        @apply text-2xl;
+    }
+    h1,
+    h2,
+    h3{
+        @apply font-kaisei font-normal;
+    }
+    p{
+        @apply font-noto text-base ;
+    }
 }
 
 :root {
-    --color-primary: #F2DC69;
-    --color-secondary: #736274;
-    --color-tertiaire: #FAE4AB;
-    --color-quaternary: #1E3846;
-    --color-background: #33242E;
+    --color-primary: 242, 220, 105;
+    --color-secondary: 115, 98, 116;
+    --color-tertiaire: 250, 228, 171;
+    --color-quaternary: 30, 56, 70;
+    --color-background: 51, 36, 46;
     --color-offWhite: 252, 252, 253;
 
     --color-linearColor: linear-gradient(257deg, rgba(252, 252, 253, 0.04) 4.68%, rgba(255, 255, 255, 0.00) 70.6%);
+    
+    scroll-behavior: smooth;
 
 }
 
 * {
-    font-family: 'Kaisei Tokumin';
-    color: var(--color-tertiaire);
+    font-family: 'Noto Sans';
+    color: rgba(var(--color-tertiaire), 1);
 }
 
 /* If the user prefers dark mode, 
