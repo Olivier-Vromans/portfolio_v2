@@ -7,13 +7,13 @@ export default function Header() {
     const navItems = ["Skills", "Projects", "Work Experience", "Contact"];
 
     return (
-        <nav className='absolute z-50 top-0 w-full flex items-center justify-between flex-wrap p-6 gap-5'>
-            <div className='flex items-center flex-shrink-0 mr-6'>
+        <nav className={`absolute z-50 sm:static top-0 p-6 md:p-3 container mx-auto flex items-center justify-between flex-wrap gap-5 ${menuOpen ? "bg-background" : "bg-none"} md:bg-background`}>
+            <div className='flex items-center flex-shrink-0'>
                 <p className='text-2xl'>
                     Olivier Vromans
                 </p>
             </div>
-            <div className='block sm:hidden'>
+            <div className='block md:hidden'>
                 <button
                     className='flex items-center'
                     onClick={() => setMenuOpen(!menuOpen)}
@@ -32,21 +32,21 @@ export default function Header() {
                     )}
                 </button>
             </div>
-            <div className={`w-full sm:flex sm:items-center sm:w-auto ${menuOpen ? 'block' : 'hidden'}`}>
-                <div className='w-full flex flex-col items-center sm:flex-row sm:items-center gap-5 sm:py-0 px-10'>
+            <div className={`w-full md:flex md:items-center md:w-auto mt-8 sm:mt-0 ${menuOpen ? 'block' : 'hidden'}`}>
+                <div className='w-full flex flex-col items-center md:flex-row gap-5 px-10 md:p-0'>
                     {navItems.map((item, index) => (
-                        <div key={index} className='flex items-center gap-3 flex-1 self-stretch rounded-2xl border bg-linearColor border-custom/10 shadow-custom backdrop-blur-sm  sm:border-0'>
-                            <a href={`#${item.toLowerCase().split(' ')[0]}`} className='flex-1 text-center py-2' onClick={() => setMenuOpen(!menuOpen)}>
+                        <div key={index} className='flex justify-center gap-3 self-stretch rounded-2xl border bg-linearColor border-custom/10 md:border-0 md:bg-none md:shadow-none'>
+                            <a href={`#${item.toLowerCase().split(' ')[0]}`} className=' py-2' onClick={() => setMenuOpen(!menuOpen)}>
                                 {item}
                             </a>
                         </div>
                     ))}
-                    <div className='block pt-5 sm:hidden'>
+                    <div className='block pt-5 md:hidden'>
                         <Button text="Download my CV" styleType='outline' />
                     </div>
                 </div>
             </div>
-            <div className='hidden sm:block'>
+            <div className='hidden md:block'>
                 <Button text="Download my CV" styleType='outline' />
             </div>
         </nav>
