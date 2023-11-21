@@ -12,6 +12,7 @@ import React from 'react';
  * Button component props
  * @typedef {object} ButtonProps
  * @property {string} text - The text to be displayed on the button.
+ * @property {string} [href] - The href for the button.
  * @property {string} [className] - Additional CSS classes for the button.
  * @property {StyleType} [styleType='default'] - The style type for the button.
  * @property {SizeType} [sizeType='default'] - The size type for the button.
@@ -23,7 +24,7 @@ import React from 'react';
  * @param {ButtonProps} props - Component props.
  * @returns {JSX.Element} - Rendered component.
  */
-export default function Button({ text, className, styleType = 'default', sizeType = 'default', onClick }) {
+export default function Button({ text, href, className, styleType = 'default', sizeType = 'default', onClick }) {
     const styles = {
         default: "text-quaternary bg-primary hover:bg-quaternary hover:text-primary",
         selected: "bg-quaternary text-primary",
@@ -39,12 +40,12 @@ export default function Button({ text, className, styleType = 'default', sizeTyp
     const selectedSize = sizes[sizeType] || sizes.default;
 
     return (
-        <button
-            type='button'
-            className={`min-w-[128px] ${className} ${selectedStyle} ${selectedSize} rounded-full cursor-pointer inline-block`}
+        <a
+            {...(href && { href })}
+            className={`min-w-[128px] ${className} ${selectedStyle} ${selectedSize} rounded-full cursor-pointer inline-block text-center`}
             onClick={onClick}
         >
             {text}
-        </button>
+        </a>
     );
 }

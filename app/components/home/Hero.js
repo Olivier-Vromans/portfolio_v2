@@ -23,7 +23,7 @@ export default function Hero() {
                     </p>
                 </div>
                 <div className='flex self-center'>
-                    <Button text={"Check out my work"} sizeType='big' />
+                    <Button text={"Check out my work"} sizeType='big' href='#projects' />
                 </div>
             </div>
         </div>
