@@ -1,8 +1,12 @@
 import React from 'react';
 import Button from '../Button.js';
 import Bgmask from '../Bgmask.js';
+import Typewriter from '../Typewriter.js';
 
 export default function Hero() {
+    const roles = [
+        "Back-end Developer", "Front-end Developer", "Designer", "Student"
+    ];
     return (
         <div className='relative h-screen w-full'>
             <Bgmask
@@ -13,11 +17,9 @@ export default function Hero() {
             <div className="relative container mx-auto flex flex-col justify-center h-full gap-8 p-6 sm:p-0">
                 <h1 className="mb-4">Olivier Vromans Portfolio</h1>
                 <div className='flex flex-col gap-6'>
+                    <Typewriter initalText="I am a " inputText={roles} />
                     <p>
-                        {`Ik ben een <Deleted Text>`}
-                    </p>
-                    <p>
-                        Ik ben sinds september 2020 begonnen aan de studie Creative Media and Game Technologies in Rotterdam.
+                        I started my study at the university of applied sciences in Rotterdam in 2020. Here I started the course Creative Media and Game Technologies.
                     </p>
                 </div>
                 <div className='flex self-center'>
