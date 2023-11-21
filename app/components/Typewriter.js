@@ -75,7 +75,7 @@ const Typewriter = ({ initalText, inputText }) => {
     }, []);
 
     return (
-        <p className="text-xl md:text-3xl lg:text-5xl ">
+        <p className="text-xl">
             {initalText}
             <span className='italic'>
                 {heroText} <span className="text-primary animate-pulse -ml-2.5 not-italic">|</span>
