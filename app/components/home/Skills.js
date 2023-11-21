@@ -43,20 +43,30 @@ export default function Skills() {
     const [selectedSkill, setSelectedSkill] = useState("all");
     const isMobile = useMediaQuery({ maxWidth: 767 });
     const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
+    const isSmallDesktop = useMediaQuery({ minWidth: 1024, maxWidth: 1279 });
 
-    const [maxRendered, setMaxRendered] = useState(5)
-
+    const [maxRendered, setMaxRendered] = useState(4)
     let renderedCount = 0;
 
     useEffect(() => {
-        checkRender()
-    }, []);
+        checkRender(); // Initial check
+
+        // Add event listener for window resize
+        window.addEventListener('resize', checkRender);
+
+        // Clean up the event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', checkRender);
+        };
+    }, [isMobile, isTablet, isSmallDesktop]);
 
     const checkRender = () => {
         if (isMobile) {
             setMaxRendered(4);
         } else if (isTablet) {
             setMaxRendered(6);
+        } else if (isSmallDesktop) {
+            setMaxRendered(8);
         } else {
             setMaxRendered(5);
         }
@@ -78,7 +88,7 @@ export default function Skills() {
 
             {/* Content */}
             <div id='skills' className="relative container mx-auto flex md:flex-wrap md:content-end flex-col justify-center h-full gap-8 p-6 sm:p-0">
-                <div className='bg-secondary/80 flex flex-col gap-6 p-6 pb-12 md:px-12 md:py-16 md:w-4/5 min-h-[750px] md:min-h-[830px] lg:min-h-[536px]'>
+                <div className='bg-secondary/80 flex flex-col gap-6 p-6 pb-12 md:px-12 md:py-16 md:w-4/5'>
                     <h2 className='text-2xl md:text-5xl'>
                         My Skills
                     </h2>
@@ -96,14 +106,14 @@ export default function Skills() {
                             </div>
                         )}
                     </div>
-                    <div className='flex flex-wrap gap-8 justify-center md:justify-start'>
+                    <div className='flex flex-wrap gap-8 md:gap-4 lg:gap-8 justify-center'>
                         {techs.map((tech, index) => {
                             if ((selectedSkill === tech.skill || selectedSkill === "all") && renderedCount < maxRendered) {
                                 renderedCount++;
                                 return (
                                     <div
                                         key={index}
-                                        className='relative bg-quaternary flex flex-col px-8 py-1 w-[125px] h-[100px] md:w-[150px] md:h-[125px] items-center justify-center'
+                                        className='relative bg-quaternary flex flex-col px-8 py-1 w-2/5 sm:w-1/5 aspect-square md:w-[150px] md:h-[125px] items-center justify-center'
                                         style={{
                                             boxShadow: '12px 12px 24px 0px #33242E',
                                         }}
