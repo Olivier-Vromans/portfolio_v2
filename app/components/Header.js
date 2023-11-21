@@ -35,11 +35,9 @@ export default function Header() {
             <div className={`w-full md:flex md:items-center md:w-auto mt-8 sm:mt-0 ${menuOpen ? 'block' : 'hidden'}`}>
                 <div className='w-full flex flex-col items-center md:flex-row gap-5 px-10 md:p-0'>
                     {navItems.map((item, index) => (
-                        <div key={index} className='flex justify-center gap-3 self-stretch rounded-2xl border bg-linearColor border-custom/10 md:border-0 md:bg-none md:shadow-none'>
-                            <a href={`#${item.toLowerCase().split(' ')[0]}`} className=' py-2' onClick={() => setMenuOpen(!menuOpen)}>
-                                {item}
-                            </a>
-                        </div>
+                        <a key={index} className='flex justify-center gap-3 self-stretch py-2 rounded-2xl border bg-linearColor border-custom/10 md:border-0 md:bg-none md:shadow-none' href={`#${item.toLowerCase().split(' ')[0]}`} onClick={() => setMenuOpen(!menuOpen)}>
+                            {item}
+                        </a>
                     ))}
                     <div className='block pt-5 md:hidden'>
                         <Button text="Download my CV" styleType='outline' />
