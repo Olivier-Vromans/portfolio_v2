@@ -3,20 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @font-face {
-    font-family: Kaisei Tokumin;
-    src: url("https://fonts.googleapis.com/css?family=Kaisei Tokumin");
-    font-weight: normal;
-    font-style: normal;
-
-}
-@font-face {
-    font-family: Noto Sans;
-    src: url("https://fonts.googleapis.com/css2?family=Noto+Sans");
-    font-weight: normal;
-    font-style: normal;
-} */
-
 @layer base{
     h1{
         @apply text-2xl;
@@ -24,7 +10,7 @@
     h1,
     h2,
     h3{
-        @apply font-kaisei font-normal;
+        @apply font-kaisei font-bold;
     }
     p{
         @apply font-noto text-base ;

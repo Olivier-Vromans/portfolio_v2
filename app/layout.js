@@ -13,8 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaisei+Tokumin&display=swap" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0...900&amily=Kaisei+Tokumin:wght@400...800&display=swap" rel="stylesheet" />
       </head>
       <body className={`${inter.className} bg-background`}>
         <Header />
