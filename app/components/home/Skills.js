@@ -78,7 +78,7 @@ export default function Skills() {
     };
 
     return (
-        <div className='relative h-screen container w-full'>
+        <div className='relative h-full min-h-screen w-full flex items-center'>
             {/* Background */}
             <Bgmask 
                 url='/img/skills-bg.jpeg'
@@ -87,7 +87,7 @@ export default function Skills() {
             />
 
             {/* Content */}
-            <div id='skills' className="relative container mx-auto flex md:flex-wrap md:content-end flex-col justify-center h-full gap-8 p-6 sm:p-0">
+            <div id='skills' className="container flex h-full my-16 md:flex-wrap md:content-end flex-col justify-center gap-8 p-6 sm:p-0">
                 <div className='bg-secondary/80 flex flex-col gap-6 p-6 pb-12 md:px-12 md:py-16 md:w-4/5'>
                     <h2 className='text-2xl md:text-5xl'>
                         My Skills
