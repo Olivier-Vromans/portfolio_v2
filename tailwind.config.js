@@ -7,8 +7,19 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        md: '3rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      },
+    },
     extend: {
-      colors:{
+      colors: {
         primary: 'rgba(var(--color-primary), <alpha-value>)',
         secondary: 'rgba(var(--color-secondary), <alpha-value>)',
         background: "rgba(var(--color-background), <alpha-value>)",
@@ -27,7 +38,8 @@ module.exports = {
       },
       boxShadow: {
         "custom": "0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
-      }
+      },
+
     }
   },
   plugins: [],
