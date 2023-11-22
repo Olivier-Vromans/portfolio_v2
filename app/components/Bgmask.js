@@ -18,19 +18,19 @@ export default function Bgmask({ className, url, gradient1, gradient2 }) {
   return (
     <>
       {/* Background Image */}
-      <div className={`absolute inset-0 bg-cover ${className}`} style={{
+      <div className={`absolute -z-50 inset-0 bg-cover ${className}`} style={{
         backgroundImage: `url(${url})`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
       }} />
 
       {/* First Linear Gradient Overlay */}
-      <div className={`absolute inset-0 ${className}`} style={{
+      <div className={`absolute -z-50 inset-0 ${className}`} style={{
         backgroundImage: gradient1,
       }} />
 
       {/* Second Linear Gradient Overlay */}
-      <div className={`absolute inset-0 ${className}`} style={{
+      <div className={`absolute -z-50 inset-0 ${className}`} style={{
         backgroundImage: gradient2,
       }} />
     </>
