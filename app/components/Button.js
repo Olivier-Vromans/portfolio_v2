@@ -39,9 +39,9 @@ const iconComponents = icons.reduce((acc, icon) => {
  */
 export default function Button({ text, href, icon = "None", className, styleType = 'default', sizeType = 'default', onClick }) {
     const styles = {
-        default: "text-quaternary bg-primary hover:bg-quaternary hover:text-primary",
-        selected: "bg-quaternary text-primary",
-        outline: "border-primary border hover:bg-quaternary hover:text-primary",
+        default: "text-quaternary bg-primary stroke-quaternary hover:bg-quaternary hover:text-primary hover:stroke-primary",
+        selected: "bg-quaternary text-primary stroke-primary hover:stroke-quaternary",
+        outline: "border-primary border hover:bg-primary hover:text-quaternary stroke-primary hover:stroke-quaternary ",
     };
 
     const sizes = {
@@ -65,7 +65,7 @@ export default function Button({ text, href, icon = "None", className, styleType
         );
 
     }
-    
+
     // TODO Fix so it can be used dynamically with defining the icon
     const iconString = icon[0].toUpperCase() + icon.slice(1)
     const IconComponent = iconComponents[iconString];
@@ -73,16 +73,14 @@ export default function Button({ text, href, icon = "None", className, styleType
     return (
         <a
             {...(href && { href })}
-            className={`min-w-[128px] ${className} ${selectedStyle} ${selectedSize} ${icon ? "flex flex-row justify-center" : null} rounded-full cursor-pointer inline-block text-center`}
+            className={`w-full ${className} ${selectedStyle} ${selectedSize} ${icon ? "flex flex-row justify-center" : null} rounded-full cursor-pointer inline-block text-center gap-2`}
             onClick={onClick}
         >
             {icon ? (
                 <Suspense fallback={<div>Loading...</div>}>
                     <>
-                        <div className={text ? "mr-2" : null}>
-                            <IconComponent />
-                        </div>
-                        <div>{text}</div>
+                        <IconComponent />
+                        {text}
                     </>
                 </Suspense>
             ) : (
