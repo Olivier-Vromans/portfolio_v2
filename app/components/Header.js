@@ -7,7 +7,7 @@ export default function Header() {
     const navItems = ["Skills", "Projects", "Work Experience", "Contact"];
 
     return (
-        <nav className={`absolute z-50 sm:static top-0 p-6 md:p-3 container mx-auto flex items-center justify-between flex-wrap gap-5 ${menuOpen ? "bg-background" : "bg-none"} md:bg-background`}>
+        <nav className={`absolute z-50 sm:static top-0 py-6 md:py-3 container flex items-center justify-between flex-wrap gap-5 ${menuOpen ? "bg-background" : "bg-none"} md:bg-background`}>
             <div className='flex items-center flex-shrink-0'>
                 <p className='text-2xl'>
                     Olivier Vromans
@@ -33,7 +33,7 @@ export default function Header() {
                 </button>
             </div>
             <div className={`w-full md:flex md:items-center md:w-auto mt-8 sm:mt-0 ${menuOpen ? 'block' : 'hidden'}`}>
-                <div className='w-full flex flex-col items-center md:flex-row gap-5 px-10 md:p-0'>
+                <div className='w-auto flex flex-col items-center md:flex-row gap-4 lg:gap-10 px-10 md:p-0'>
                     {navItems.map((item, index) => (
                         <a key={index} className='flex justify-center gap-3 self-stretch py-2 rounded-2xl border bg-linearColor border-custom/10 md:border-0 md:bg-none md:shadow-none' href={`#${item.toLowerCase().split(' ')[0]}`} onClick={() => setMenuOpen(!menuOpen)}>
                             {item}
