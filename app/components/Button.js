@@ -30,6 +30,7 @@ const iconComponents = icons.reduce((acc, icon) => {
  * @property {StyleType} [styleType='default'] - The style type for the button.
  * @property {SizeType} [sizeType='default'] - The size type for the button.
  * @property {() => void} [onClick] - Callback function for button click.
+ * @property {boolean} [download] - If the button should download a file.
  */
 
 /**
@@ -37,7 +38,7 @@ const iconComponents = icons.reduce((acc, icon) => {
  * @param {ButtonProps} props - Component props.
  * @returns {JSX.Element} - Rendered component.
  */
-export default function Button({ text, href, icon = "None", className, styleType = 'default', sizeType = 'default', onClick }) {
+export default function Button({ text, href, icon = "None", className, styleType = 'default', sizeType = 'default', onClick, download = false}) {
     const styles = {
         default: "text-quaternary bg-primary stroke-quaternary hover:bg-quaternary hover:text-primary hover:stroke-primary",
         selected: "bg-quaternary text-primary stroke-primary hover:stroke-quaternary",
@@ -58,7 +59,7 @@ export default function Button({ text, href, icon = "None", className, styleType
             <a
                 {...(href && { href })}
                 className={`min-w-[128px] ${className} ${selectedStyle} ${selectedSize} ${icon ? "flex flex-row justify-center" : null} rounded-full cursor-pointer inline-block text-center`}
-                onClick={onClick}
+                onClick={onClick} download={download}
             >
                 {text}
             </a>
@@ -74,7 +75,7 @@ export default function Button({ text, href, icon = "None", className, styleType
         <a
             {...(href && { href })}
             className={`w-full ${className} ${selectedStyle} ${selectedSize} ${icon ? "flex flex-row justify-center" : null} rounded-full cursor-pointer inline-block text-center gap-2`}
-            onClick={onClick}
+            onClick={onClick} download={download}
         >
             {icon ? (
                 <Suspense fallback={<div>Loading...</div>}>

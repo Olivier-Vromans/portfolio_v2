@@ -40,12 +40,12 @@ export default function Header() {
                         </a>
                     ))}
                     <div className='block pt-5 md:hidden'>
-                        <Button text="Download my CV" styleType='outline' />
+                        <Button text="Download my CV" styleType='outline' href='/assets/downloads/Olivier_Vromans_CV.pdf' download />
                     </div>
                 </div>
             </div>
             <div className='hidden md:block'>
-                <Button text="Download my CV" styleType='outline' />
+                <Button text="Download my CV" styleType='outline' href='/assets/downloads/Olivier_Vromans_CV.pdf' download />
             </div>
         </nav>
     );
