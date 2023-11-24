@@ -1,0 +1,64 @@
+[
+	{
+		"title": "Lorem ipsum dolor sit amet",
+		"summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean volutpat porttitor nulla, nec aliquet dui ullamcorper vestibulum.",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean volutpat porttitor nulla, nec aliquet dui ullamcorper vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean volutpat porttitor nulla, nec aliquet dui ullamcorper vestibulum. \n \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean volutpat porttitor nulla, nec aliquet dui ullamcorper vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean volutpat porttitor nulla, nec aliquet dui ullamcorper vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean volutpat porttitor nulla, nec aliquet dui ullamcorper vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean volutpat porttitor nulla, nec aliquet dui ullamcorper vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean volutpat porttitor nulla, nec aliquet dui ullamcorper vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean volutpat porttitor nulla, nec aliquet dui ullamcorper vestibulum.",
+		"image": "./assets/images/lorem.jpg",
+		"imageDetail": "./assets/images/lorem-detail.webp",
+		"date": "2020-01-01",
+		"tags": ["Lorem", "ipsum", "dolor", "sit", "amet"],
+		"show": false
+	},
+	{
+		"title": "Anime Discord Bot",
+		"summary": "An information bot for Discord.",
+		"description": "To teach myself more about Node.js I build a Discord Bot. With the bot active you can give commands that wil give back information about animes, characters and quotes by using the Jikan API",
+		"image": "./assets/images/discord-bot.jpeg",
+		"imageDetail": "./assets/images/discord-bot-detail.png",
+		"date": "2022-02-12",
+		"tags": ["Personal", "discord", "info"],
+		"show": true
+	},
+	{
+		"title": "HoloHome",
+		"summary": "Bring concerts to your livingroom with HoloHome! With HoloHome its possible to view concerts of your favorite artists at home.",
+		"description": "The product itsself consists of two components: the HoloHome application and the HoloCone. The HoloHome application is where you can browse for concerts, add them to your favorites and view one. The HoloCone is a cone formed object that you can place on your device and projects the model of the artist in 3D. As an agency, I worked With four other members for our client named ThunderBoom Records, a record company with AI-powerd music and artists. \n\n My role on the team was to be the main developer. I decided to use Laravel as our framework to work with because it was a framework we worked in the last period, so everybody knew it and I wanted to get more experience with the framework. I had someone else do the login system for the app while I was doing the front-end back-end for the videos. In the end, we showed the product to the client and they liked it. I therefore wrote a manual on how the Web app works and how they can use it themselves.",
+		"image": "./assets/images/holoHome.png",
+		"imageDetail": "./assets/images/holoHome_detail.png",
+		"date": "2022-03-28",
+		"tags": ["Laravel", "Backend", "School Project"],
+		"show": true
+	},
+	{
+		"title": "Full Stack Dev lesson",
+		"summary": "Learing to make a REST-API and using React",
+		"description": "For the programming lessons in year 2 period 6 I had to build a REST API for the backend I used Node.js, npm and the MongoDB. For the Frontend I used React to show the API",
+		"image": "./assets/images/api.jpg",
+		"imageDetail": "./assets/images/api-detail.png",
+		"date": "2021-11-30",
+		"tags": ["REST API", "Node.js", "NPM", "MongoDB"],
+		"show": true
+	},
+	{
+		"title": "Automated Testing",
+		"summary": "TwoPine project for automated testing of a website with Cypress",
+		"description": "For my internship with <a target='_blank' href='https://twopine.nl'>TwoPine Media</a> I had to oppurtunity to learn more about automated testing. This project started from a client that occasionally if everything was working fine on the website because they didn't have any orders. So this was manualy tested by the developers, so the question was: How can we test functions automaticly? So I reseacrched automated testing and found out about Jest and Cypress. I decided to use Cypress because it has a nice GUI that helps write tests. After A couple testcases I showed it to my manager and he liked it and asked me if it possible to let it automaticly run after every release. So with that in mind I asked the backend developer what he thought about it and he said it was possible by using a POST Request. With that info I created a REST API that added the test that needs to run in a queue so it can be tested by Cypress after a test is finished the data is saved in a Mongodb. I decided to make a queue because on the first dat the server crashed because of to many request from outside. So that gave me two problems to solve, the first problem was to make a white list where only the Ip's from TwoPine can use the API. The second problem was the overload, so I decided to make a queue so Cypress can run the tests one by one and not simultaneously. This was the perfect solution for those problems, with those problemes out of the way I had chosen to create a Slack bot that send a message when the test is done that also includes the status of the test. This was an easy task because of my experience with creating a Discord bot. <br></br> After creating the backend for the project it was time for the second part of the project. I created a design for a dashboard that needed to make everything visual for the developers. I created a design in Figma with multiple iterations, eventually a collegue of mine did the finishing touches. After the design was finished I started to code the dashboard. I decided to use NextJs because I wanted to learn more about it and I had some experience with React. I created a dashboard that shows the status of the tests and the results of the tests and all the errors there are so that the can easly been seen and fixed. <br></br> This project was a great learning experience for me, I learned a lot about automated testing with Cypress and building tests and extending my knowledge on how to build a REST API. Nextjs was also a good learning experience on working with react.",
+		"image": "./assets/images/cypress.png",
+		"imageDetail": "./assets/images/cypress-detail.png",
+		"date": "2022-10-28",
+		"tags": ["Cypress", "REST API", "Node.js", "NextJs", "MongoDB"],
+		"show": true
+	},
+	{
+		"title": "EGR-Planner",
+		"summary": "A planner for the EGR students",
+		"description": "",
+		"image": "./assets/images/egr-planner.png",
+		"imageDetail": "./assets/images/egr-planner-detail.png",
+		"date": "2022-03-29",
+		"tags": ["React", "Node.js", "MongoDB", "School Project"],
+		"show": false
+	}
+]
+
+
