@@ -1,0 +1,60 @@
+[
+	{
+		"title": "Project 1",
+		"description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+		"image": "placeholder.webp",
+		"liveLink": "https://google.com",
+		"githubLink": "https://github.com",
+		"techStack": [
+			"NextJS",
+			"Docker",
+			"React"
+		],
+		"date": "11/7/2023",
+		"show": true
+	},
+	{
+		"title": "Project 2",
+		"description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+		"image": "placeholder.webp",
+		"liveLink": "https://google.com",
+		"githubLink": "https://github.com",
+		"techStack": [
+			"NextJS",
+			"Docker",
+			"React",
+			"MongoDB",
+			"NodeJS"
+		],
+		"date": "11/9/2023",
+		"show": true
+	},
+	{
+		"title": "Project 3",
+		"description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+		"image": "placeholder.webp",
+		"liveLink": "https://google.com",
+		"githubLink": "https://github.com",
+		"techStack": [
+			"NextJS",
+			"Docker",
+			"React"
+		],
+		"date": "11/5/2023",
+		"show": false
+	},
+	{
+		"title": "Project 4",
+		"description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+		"image": "placeholder.webp",
+		"liveLink": "https://google.com",
+		"githubLink": "https://github.com",
+		"techStack": [
+			"NextJS",
+			"Docker",
+			"React"
+		],
+		"date": "11/24/2023",
+		"show": true
+	}
+]
