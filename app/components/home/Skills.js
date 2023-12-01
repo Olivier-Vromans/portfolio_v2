@@ -6,39 +6,29 @@ import Bgmask from '../Bgmask.js';
 import { useMediaQuery } from 'react-responsive';
 
 export default function Skills() {
-    const skills = ["Back-end", "Front-end", "Database", "Dev-Ops", "Other"];
-    const techs = [
-        {
-            name: "React",
-            skill: "Front-end",
-            link: "https://cdn.svgporn.com/logos/react.svg"
-        },
-        {
-            name: "NextJs",
-            skill: "Back-end",
-            link: "https://cdn.svgporn.com/logos/nextjs-icon.svg"
-        },
-        {
-            name: "MongoDB",
-            skill: "Database",
-            link: "https://cdn.svgporn.com/logos/mongodb-icon.svg"
-        },
-        {
-            name: "Docker",
-            skill: "Dev-Ops",
-            link: "https://cdn.svgporn.com/logos/docker-icon.svg"
-        },
-        {
-            name: "NodeJS",
-            skill: "Back-end",
-            link: "https://cdn.svgporn.com/logos/nodejs-icon.svg"
-        },
-        {
-            name: "MySQL",
-            skill: "Database",
-            link: "https://cdn.svgporn.com/logos/mysql-icon.svg"
-        }
-    ];
+    const [skills, setSkills] = useState(null);
+    const [techs, setTechs] = useState(null);
+
+    // TODO - Change to server side props
+    async function getSkills() {
+        const res = await fetch('http://localhost:3000/assets/skills.json')
+        const skillsProps = await res.json()
+        const sortedSkills = skillsProps
+        setSkills(sortedSkills);
+
+        // loop through skills and get techs for each skill and add to array
+        let techs = [];
+        skillsProps.forEach((skill) => {
+            skill.techs.forEach((tech) => {
+                techs.push(tech);
+            });
+        });
+        setTechs(techs);
+    }
+
+    useEffect(() => {
+        getSkills();
+    }, []);
 
     const [selectedSkill, setSelectedSkill] = useState("all");
     const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -74,13 +64,14 @@ export default function Skills() {
 
     const handleSkillChange = (newSkill) => {
         selectedSkill !== newSkill ? setSelectedSkill(newSkill) : setSelectedSkill("all");
+        console.log(selectedSkill)
         checkRender()
     };
 
     return (
         <div className='relative h-full min-h-screen w-full flex items-center'>
             {/* Background */}
-            <Bgmask 
+            <Bgmask
                 url='/img/skills-bg.jpeg'
                 gradient1='linear-gradient(180deg, rgba(var(--color-background), 1) 0%, rgba(var(--color-background), 0.2) 26%, rgba(var(--color-background), 0.60) 69%, rgba(var(--color-background), 1) 100%)'
                 gradient2='linear-gradient(90deg, rgba(var(--color-background), 1) 0%, rgba(217, 217, 217, 0) 21%, rgba(var(--color-background), 0.20) 80%, rgba(var(--color-background), 1) 100%)'
@@ -96,38 +87,46 @@ export default function Skills() {
                         As a web developer, I possess a wide range of skills that allow me to design, build, and maintain websites that are both functional and visually appealing. I have experience with front-end and back-end technologies, as well as web optimization techniques, web accessibility standards, and version control tools. (Replace This Random Text)
                     </p>
                     <div className='flex flex-wrap gap-5 justify-center '>
-                        {skills.map((skill, index) =>
-                            <div key={index}>
-                                <Button
-                                    text={skill}
-                                    styleType={selectedSkill === skill ? "selected" : "outline"}
-                                    onClick={() => handleSkillChange(skill)}
-                                />
-                            </div>
-                        )}
+                        {skills ?
+                            skills.map((skill, index) =>
+                                <div key={index}>
+                                    <Button
+                                        text={skill.name}
+                                        styleType={selectedSkill === skill ? "selected" : "outline"}
+                                        onClick={() => handleSkillChange(skill.name)}
+                                    />
+                                </div>
+                            )
+                            :
+                            null
+                        }
                     </div>
                     <div className='flex flex-wrap gap-8 md:gap-4 lg:gap-8 justify-center'>
-                        {techs.map((tech, index) => {
-                            if ((selectedSkill === tech.skill || selectedSkill === "all") && renderedCount < maxRendered) {
-                                renderedCount++;
-                                return (
-                                    <div
-                                        key={index}
-                                        className='relative bg-quaternary flex flex-col px-8 py-1 w-2/5 sm:w-1/5 aspect-square md:w-[150px] md:h-[125px] items-center justify-center'
-                                        style={{
-                                            boxShadow: '12px 12px 24px 0px #33242E',
-                                        }}
-                                    >
-                                        <div className='relative w-12 h-12'>
-                                            <Image src={tech.link} fill alt={`Experience with ${tech.name}`} />
+                        {techs ?
+                            techs.map((tech, index) => {
+                                if ((selectedSkill === tech.skill || selectedSkill === "all") && renderedCount < maxRendered) {
+                                    renderedCount++;
+                                    return (
+                                        <div
+                                            key={index}
+                                            className='relative bg-quaternary flex flex-col px-8 py-1 w-2/5 sm:w-1/5 aspect-square md:w-[150px] md:h-[125px] items-center justify-center'
+                                            style={{
+                                                boxShadow: '12px 12px 24px 0px #33242E',
+                                            }}
+                                        >
+                                            <div className='relative w-12 h-12'>
+                                                <Image src={tech.icon} fill alt={`Experience with ${tech.name}`} />
+                                            </div>
+                                            <p className='font-kaisei'>{tech.name}</p>
                                         </div>
-                                        <p className='font-kaisei'>{tech.name}</p>
-                                    </div>
-                                );
-                            } else {
-                                return null;
-                            }
-                        })}
+                                    );
+                                } else {
+                                    return null;
+                                }
+                            })
+                            :
+                            null
+                        }
                     </div>
                 </div>
             </div>

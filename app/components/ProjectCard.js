@@ -36,7 +36,7 @@ export default function ProjectCard({ project }) {
   const {
     title,
     summary,
-    description,
+    projectDetail,
     image,
     liveLink,
     githubLink,
@@ -63,7 +63,7 @@ export default function ProjectCard({ project }) {
 
 
   return (
-    <div className="flex flex-col max-w-xs max-h-full gap-4 sm:flex-row md:flex-col lg:flex-row xl:flex-col sm:max-w-md md:max-w-xs lg:max-w-sm  xl:max-w-xs p-4 justify-evenly rounded-2xl shadow border border-neutral-50 border-opacity-10 backdrop-blur-sm bg-linearColor">
+    <div className="flex flex-col max-w-xs max-h-full gap-4 sm:flex-row md:flex-col lg:flex-row xl:flex-col sm:max-w-md md:max-w-xs lg:max-w-2xl  xl:max-w-xs p-4 justify-evenly rounded-2xl shadow border border-neutral-50 border-opacity-10 backdrop-blur-sm bg-linearColor">
       <div className="relative w-full h-full aspect-square sm:w-1/2 md:w-full lg:w-1/2 xl:w-full xl:h-1/2 ">
         <Image
           src={image ? `/img/projects/${image}` : '/img/projects/placeholder.webp'}
@@ -84,7 +84,7 @@ export default function ProjectCard({ project }) {
               </div>
             ))}
           </div>
-          <div className="text-sm">{description.length > 80 ? `${description.slice(0, 80)}...` : description}</div>
+          <div className="text-sm">{projectDetail.desired > 80 ? `${projectDetail.desired .slice(0, 80)}...` : projectDetail.desired }</div>
         </div>
         <div className="flex flex-row gap-3 justify-evenly">
           {buttons}

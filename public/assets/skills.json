@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Back-end",
+        "techs": [
+            {
+                "name": "NextJs",
+                "skill": "Back-end",
+                "icon": "https://cdn.svgporn.com/logos/nextjs-icon.svg"
+            },
+            {
+                "name": "NodeJS",
+                "skill": "Back-end",
+                "icon": "https://cdn.svgporn.com/logos/nodejs-icon.svg"
+            }
+        ]
+    },
+    {
+        "name": "Front-end",
+        "techs": [
+            {
+                "name": "React",
+                "skill": "Front-end",
+                "icon": "https://cdn.svgporn.com/logos/react.svg"
+            }
+        ]
+    },
+    {
+        "name": "Database",
+        "techs": [
+            {
+                "name": "MongoDB",
+                "skill": "Database",
+                "icon": "https://cdn.svgporn.com/logos/mongodb-icon.svg"
+            },
+            {
+                "name": "MySQL",
+                "skill": "Database",
+                "icon": "https://cdn.svgporn.com/logos/mysql-icon.svg"
+            }
+        ]
+    },
+    {
+        "name": "DevOps",
+        "techs": [
+            {
+                "name": "Docker",
+                "skill": "Dev-Ops",
+                "icon": "https://cdn.svgporn.com/logos/docker-icon.svg"
+            }
+        ]
+    }
+]
