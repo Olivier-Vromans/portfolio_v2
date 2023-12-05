@@ -84,7 +84,7 @@ export default function Skills() {
                         My Skills
                     </h2>
                     <p className='text-sm md:text-xl'>
-                        As a web developer, I possess a wide range of skills that allow me to design, build, and maintain websites that are both functional and visually appealing. I have experience with front-end and back-end technologies, as well as web optimization techniques, web accessibility standards, and version control tools. (Replace This Random Text)
+                        My skills range from a wide set of technologies in the areas of back-end, front-end, databases, and DevOps, along with a couple of design tools. I am still eager to learn new technologies so I can grasp all kinds of knowledge to help my carrer and curiosity.
                     </p>
                     <div className='flex flex-wrap gap-5 justify-center '>
                         {skills ?

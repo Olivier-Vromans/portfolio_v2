@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import ProjectCard from '../ProjectCard.js'
 
-export default function Projects({ projectProps }) {
+export default function Projects() {
     const [projects, setProjects] = useState(null);
 
     // TODO - Change to server side props
@@ -32,21 +32,32 @@ export default function Projects({ projectProps }) {
                     Check out some of my work
                 </p>
                 <p className='text-base'>
-                    As a web developer, I possess a wide range of skills that allow me to design, build, and maintain websites that are both functional and visually appealing. I have experience with front-end and back-end technologies, as well as web optimization techniques, web accessibility standards, and version control tools.
+                    Here is a collection of featured projects from my portfolio, showcasing a diverse range of work, spanning from academic assignments to personal hobby projects.
                 </p>
 
             </div>
             {/* TODO Redo it into a slider */}
             <div className='flex flex-wrap w-full justify-center gap-4'>
                 {/* projects decend based on date */}
-                {projects ?
-                    projects.map((project, index) => (
-                        <ProjectCard key={index} project={project} />
-                    ))
-                    :
+                {projects && projects.length > 0 ? (
+                    projects.length < 3 ? (
+                        <>
+                            {projects.map((project) => (
+                                <ProjectCard key={project.id} project={project} />
+                            ))}
+                            <p>More projects are coming soon.</p>
+                        </>
+                    ) : (
+                        projects.slice(0, 3).map((project) => (
+                            <ProjectCard key={project.id} project={project} />
+                        ))
+                    )
+                ) : (
                     <ProjectCard project={null} />
-                }
+                )}
+
+
             </div>
-        </div>
+        </div >
     )
 }

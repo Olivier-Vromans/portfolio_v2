@@ -36,8 +36,8 @@
 			"result": "Despite facing challenges, overcoming errors, and engaging in necessary troubleshooting, the final outcome is a success. The connection between services deliver a user-friendly and completely automated streaming experience. The ease of requesting, downloading, and streaming content what this project provides is as easy as a two click button. This project thought me that not only you can selfhost a complete streaming service but also troubleshooting, overcoming problems, determination and patience are key to success. I am very proud of this project and I hope you enjoyed reading about it as much as I enjoyed making it"
 		},
 		"image": "project_3-1.webp",
-		"liveLink": "",
-		"githubLink": "",
+		"liveLink": "https://vromans.dev",
+		"githubLink": "https://github.com/olivier-vromans",
 		"techStack": [
 			"Linux",
 			"Unraid",

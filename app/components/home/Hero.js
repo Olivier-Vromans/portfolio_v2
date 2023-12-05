@@ -22,7 +22,8 @@ export default function Hero() {
                         <div className='flex flex-col gap-6'>
                             <Typewriter initalText="I am a " inputText={roles} />
                             <p>
-                                I started my study at the university of applied sciences in Rotterdam in 2020. Here I started the course Creative Media and Game Technologies.
+
+                                I began my studies at the University of Applied Sciences in Rotterdam in 2020, where I enrolled in the Creative Media and Game Technologies program.
                             </p>
                         </div>
                     </div>
