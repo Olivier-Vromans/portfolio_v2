@@ -26,7 +26,7 @@ const Typewriter = ({ initalText, inputText }) => {
 
 
     const [heroText, setHeroText] = useState("");
-    let intervalId;
+    const [intervalId, setIntervalId] = useState(null);
     const speed = 100;
     
 
@@ -67,12 +67,17 @@ const Typewriter = ({ initalText, inputText }) => {
     };
 
     useEffect(() => {
+        if (!inputText || inputText.length === 0) {
+            console.error("Typewriter component: 'inputText' prop is not defined or is an empty array.");
+            return;
+        }
+    
         // Initial text
         changeHeroText(inputText[0]);
-
+    
         // Clear interval on component unmount
         return () => clearInterval(intervalId);
-    }, []);
+    }, [intervalId, inputText]); 
 
     return (
         <p className="text-xl">
