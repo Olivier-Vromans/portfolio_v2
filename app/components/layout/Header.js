@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import Button from './Button.js';
+import Button from '../Button.js';
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);

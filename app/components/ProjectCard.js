@@ -1,6 +1,7 @@
 import Image from 'next/image.js';
 import React from 'react';
 import Button from './Button.js';
+import { IconBrandGithub, IconExternalLink } from '@tabler/icons-react';
 
 export default function ProjectCard({ project }) {
   if (project === null) {
@@ -44,11 +45,11 @@ export default function ProjectCard({ project }) {
   } = project;
 
   const buttons = [];
-  if (liveLink === "") {
-    buttons.push(<Button key="live" icon='External' href={liveLink} />);
+  if (liveLink !== "") {
+    buttons.push(<Button key="live" icon={IconExternalLink} href={liveLink} />);
   }
-  if (githubLink === "") {
-    buttons.push(<Button key="github" icon="Github" href={githubLink} />);
+  if (githubLink !== "") {
+    buttons.push(<Button key="github" icon={IconBrandGithub} href={githubLink} />);
   }
 
   // TODO - Check if I want This
@@ -63,8 +64,8 @@ export default function ProjectCard({ project }) {
 
 
   return (
-    <div className="flex flex-col max-w-xs max-h-full gap-4 sm:flex-row md:flex-col lg:flex-row xl:flex-col sm:max-w-md md:max-w-xs lg:max-w-xl  xl:max-w-xs p-4 justify-evenly rounded-2xl shadow border border-neutral-50 border-opacity-10 backdrop-blur-sm bg-linearColor">
-      <div className="relative w-full h-full aspect-square sm:w-1/2 md:w-full lg:w-1/2 xl:w-full xl:h-1/2 ">
+    <div className="flex flex-col max-w-xs max-h-full gap-4 h-full sm:flex-row md:flex-col lg:flex-row xl:flex-row sm:max-w-md md:max-w-xs lg:max-w-xl  xl:max-w-xl p-4 justify-evenly rounded-2xl shadow border border-neutral-50 border-opacity-10 backdrop-blur-sm bg-linearColor">
+      <div className="relative w-full h-full aspect-square sm:w-1/2 md:w-full lg:w-1/2 xl:w-1/2 ">
         <Image
           src={image ? `/img/projects/${image}` : '/img/projects/placeholder.webp'}
           alt={title}
@@ -72,7 +73,7 @@ export default function ProjectCard({ project }) {
           className="rounded-t-md lg:rounded-md object-cover"
         />
       </div>
-      <div className="flex-1 h-48 sm:h-full xl:h-56 flex flex-col justify-between gap-4">
+      <div className="flex-1 h-48 sm:h-full xl:h-56 flex flex-col justify-between gap-2 m-4">
         <div className={`flex flex-col justify-between ${buttons ? "gap-4" : null}`}>
           <div className="text-xl">{title}</div>
           <div className="flex flex-wrap self-stretch justify-start items-start gap-2">
