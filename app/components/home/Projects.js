@@ -7,7 +7,7 @@ export default function Projects() {
 
     // TODO - Change to server side props
     async function getProjects() {
-        const res = await fetch('http://localhost:3000/assets/projects.json')
+        const res = await fetch('/assets/projects.json')
         const projectProps = await res.json()
         const sortedProjects = projectProps
             .filter((project) => project.show)

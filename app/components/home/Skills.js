@@ -11,7 +11,7 @@ export default function Skills() {
 
     // TODO - Change to server side props
     async function getSkills() {
-        const res = await fetch('http://localhost:3000/assets/skills.json')
+        const res = await fetch('/assets/skills.json')
         const skillsProps = await res.json()
         const sortedSkills = skillsProps
         setSkills(sortedSkills);
