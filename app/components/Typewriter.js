@@ -19,55 +19,56 @@ import React, { useEffect, useState } from 'react';
  */
 
 const Typewriter = ({ initalText, inputText }) => {
-    if (!inputText || inputText.length === 0) {
-        console.error("Typewriter component: 'inputText' prop is not defined or is an empty array.");
-        return null;
-    }
+    // if (!inputText || inputText.length === 0) {
+    //     console.error("Typewriter component: 'inputText' prop is not defined or is an empty array.");
+    //     return null;
+    // }
+
 
     const [heroText, setHeroText] = useState("");
     const [intervalId, setIntervalId] = useState(null);
-    const speed = 100;
-
-    const typeText = (text, index) => {
-        if (index < text.length) {
-            setHeroText(text.substring(0, index + 1));
-            setTimeout(() => {
-                typeText(text, index + 1);
-            }, speed);
-        } else {
-            setTimeout(() => {
-                deleteText(text, text.length - 1, speed);
-            }, speed * 10);
-        }
-    };
-
-    const deleteText = (text, index, speed) => {
-        if (index >= 0) {
-            setHeroText(text.substring(0, index));
-            setTimeout(() => {
-                deleteText(text, index - 1, speed);
-            }, speed);
-        } else {
-            const nextIndex = inputText.indexOf(text) + 1 === inputText.length ? 0 : inputText.indexOf(text) + 1;
-            setTimeout(() => {
-                typeText(inputText[nextIndex], 0);
-            }, speed * 5);
-        }
-    };
-
-    const changeHeroText = (newText) => {
-        setTimeout(() => {
-            typeText(newText, 0);
-        });
-    };
-
     useEffect(() => {
+        const speed = 100;
+        // Declare changeHeroText before calling it
+        const changeHeroText = (newText) => {
+            setTimeout(() => {
+                typeText(newText, 0);
+            });
+        };
+        
         // Initial text
         changeHeroText(inputText[0]);
 
+        const typeText = (text, index) => {
+            if (index < text.length) {
+                setHeroText(text.substring(0, index + 1));
+                setTimeout(() => {
+                    typeText(text, index + 1);
+                }, speed);
+            } else {
+                setTimeout(() => {
+                    deleteText(text, text.length - 1, speed);
+                }, speed * 10);
+            }
+        };
+
+        const deleteText = (text, index, speed) => {
+            if (index >= 0) {
+                setHeroText(text.substring(0, index));
+                setTimeout(() => {
+                    deleteText(text, index - 1, speed);
+                }, speed);
+            } else {
+                const nextIndex = inputText.indexOf(text) + 1 === inputText.length ? 0 : inputText.indexOf(text) + 1;
+                setTimeout(() => {
+                    typeText(inputText[nextIndex], 0);
+                }, speed * 5);
+            }
+        };
+
         // Clear interval on component unmount
         return () => clearInterval(intervalId);
-    }, [intervalId, inputText]);
+    }, [inputText, intervalId]);
 
     return (
         <p className="text-xl">
