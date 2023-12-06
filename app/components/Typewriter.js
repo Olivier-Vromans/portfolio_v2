@@ -19,15 +19,16 @@ import React, { useEffect, useState } from 'react';
  */
 
 const Typewriter = ({ initalText, inputText }) => {
-    // if (!inputText || inputText.length === 0) {
-    //     console.error("Typewriter component: 'inputText' prop is not defined or is an empty array.");
-    //     return null;
-    // }
+
 
 
     const [heroText, setHeroText] = useState("");
     const [intervalId, setIntervalId] = useState(null);
     useEffect(() => {
+        if (!inputText || inputText.length === 0) {
+            console.error("Typewriter component: 'inputText' prop is not defined or is an empty array.");
+            return null;
+        }
         const speed = 100;
         // Declare changeHeroText before calling it
         const changeHeroText = (newText) => {
@@ -35,7 +36,7 @@ const Typewriter = ({ initalText, inputText }) => {
                 typeText(newText, 0);
             });
         };
-        
+
         // Initial text
         changeHeroText(inputText[0]);
 
