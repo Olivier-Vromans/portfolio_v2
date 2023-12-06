@@ -10,10 +10,10 @@
     h1,
     h2,
     h3{
-        @apply font-kaisei font-bold;
+        @apply font-kaiseiTokumin font-bold;
     }
     p{
-        @apply font-noto text-base ;
+        @apply font-notoSans text-base ;
     }
 }
 

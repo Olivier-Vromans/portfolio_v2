@@ -25,8 +25,8 @@ module.exports = {
         quaternary: "rgba(var(--color-quaternary), <alpha-value>)"
       },
       fontFamily: {
-        noto: ['Noto Sans', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
-        kaisei: ['Kaisei Tokumin', 'ui-serif', 'Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
+        notoSans: ['var(--font-notoSans)', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
+        kaiseiTokumin: ['var(--font-kaiseiTokumin)', 'ui-serif', 'Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
       },
       borderColor: {
         custom: "rgba(var(--color-offWhite), <alpha-value>)",

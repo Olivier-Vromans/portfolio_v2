@@ -1,9 +1,20 @@
 import { Inter } from 'next/font/google'
+import { Noto_Sans, Kaisei_Tokumin } from 'next/font/google'
 import './globals.css'
 import Header from './components/Header.js'
 import Head from 'next/head.js'
 
-const inter = Inter({ subsets: ['latin'] })
+const notoSans = Noto_Sans({
+  subsets: ['latin'],
+  variable: '--font-notoSans',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
+})
+
+const kaiseiTokumin = Kaisei_Tokumin({
+  subsets: ['latin'],
+  variable: '--font-kaiseiTokumin',
+  weight: ['400', '500', '700', '800']
+})
 
 export const metadata = {
   title: 'Portfolio Olivier Vromans',
@@ -14,9 +25,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head >
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0...900&amily=Kaisei+Tokumin:wght@400...800&display=swap" rel="stylesheet" />
+        
       </Head>
-      <body className={`${inter.className} bg-background`}>
+      <body className={`${kaiseiTokumin.variable} ${notoSans.variable} bg-background`}>
         <Header />
         {children}
       </body>
