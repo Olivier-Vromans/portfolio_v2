@@ -89,13 +89,12 @@ export default function Skills() {
                     <div className='flex flex-wrap gap-5 justify-center '>
                         {skills ?
                             skills.map((skill, index) =>
-                                <div key={index}>
-                                    <Button
-                                        text={skill.name}
-                                        styleType={selectedSkill === skill ? "selected" : "outline"}
-                                        onClick={() => handleSkillChange(skill.name)}
-                                    />
-                                </div>
+                                <Button
+                                    key={index}
+                                    text={skill.name}
+                                    styleType={selectedSkill === skill.name ? "selected" : "outline"}
+                                    onClick={() => handleSkillChange(skill.name)}
+                                />
                             )
                             :
                             null

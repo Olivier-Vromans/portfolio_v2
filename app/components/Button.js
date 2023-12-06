@@ -28,7 +28,7 @@ import React, { Suspense } from 'react';
  */
 export default function Button({ text, href, icon: IconComponent = null, iconColor = "inherit", className, styleType = 'default', sizeType = 'default', onClick, download = false, blank = false}) {
     const styles = {
-        default: "text-quaternary bg-primary stroke-quaternary hover:bg-quaternary hover:text-primary hover:stroke-primary",
+        default: "bg-primary text-quaternary stroke-quaternary hover:bg-quaternary hover:text-primary hover:stroke-primary",
         selected: "bg-quaternary text-primary stroke-primary hover:stroke-quaternary",
         outline: "border-primary border hover:bg-primary hover:text-quaternary stroke-primary hover:stroke-quaternary ",
         icon: "stroke-tertiaire hover:stroke-primary",
