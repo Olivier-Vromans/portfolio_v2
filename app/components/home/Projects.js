@@ -45,7 +45,7 @@ export default function Projects() {
                             {projects.map((project) => (
                                 <ProjectCard key={project.id} project={project} />
                             ))}
-                            <p>More projects are coming soon.</p>
+                            <p className='w-full text-center'>More projects are coming soon.</p>
                         </>
                     ) : (
                         projects.slice(0, 3).map((project) => (

@@ -44,10 +44,10 @@ export default function ProjectCard({ project }) {
   } = project;
 
   const buttons = [];
-  if (liveLink) {
+  if (liveLink === "") {
     buttons.push(<Button key="live" icon='External' href={liveLink} />);
   }
-  if (githubLink) {
+  if (githubLink === "") {
     buttons.push(<Button key="github" icon="Github" href={githubLink} />);
   }
 
