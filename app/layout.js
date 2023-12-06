@@ -1,8 +1,8 @@
-import { Inter } from 'next/font/google'
 import { Noto_Sans, Kaisei_Tokumin } from 'next/font/google'
 import './globals.css'
-import Header from './components/Header.js'
+import Header from './components/layout/Header.js'
 import Head from 'next/head.js'
+import Footer from './components/layout/Footer.js'
 
 const notoSans = Noto_Sans({
   subsets: ['latin'],
@@ -30,6 +30,7 @@ export default function RootLayout({ children }) {
       <body className={`${kaiseiTokumin.variable} ${notoSans.variable} bg-background`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )
