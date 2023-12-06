@@ -24,17 +24,15 @@ const Typewriter = ({ initalText, inputText }) => {
         return null;
     }
 
-
     const [heroText, setHeroText] = useState("");
     const [intervalId, setIntervalId] = useState(null);
     const speed = 100;
-    
 
     const typeText = (text, index) => {
         if (index < text.length) {
             setHeroText(text.substring(0, index + 1));
             setTimeout(() => {
-                typeText(text, index + 1, speed);
+                typeText(text, index + 1);
             }, speed);
         } else {
             setTimeout(() => {
@@ -43,7 +41,6 @@ const Typewriter = ({ initalText, inputText }) => {
         }
     };
 
-    // Function to simulate deleting effect
     const deleteText = (text, index, speed) => {
         if (index >= 0) {
             setHeroText(text.substring(0, index));
@@ -51,7 +48,6 @@ const Typewriter = ({ initalText, inputText }) => {
                 deleteText(text, index - 1, speed);
             }, speed);
         } else {
-            // Start typing the next text
             const nextIndex = inputText.indexOf(text) + 1 === inputText.length ? 0 : inputText.indexOf(text) + 1;
             setTimeout(() => {
                 typeText(inputText[nextIndex], 0);
@@ -59,7 +55,6 @@ const Typewriter = ({ initalText, inputText }) => {
         }
     };
 
-    // Function to change hero text
     const changeHeroText = (newText) => {
         setTimeout(() => {
             typeText(newText, 0);
@@ -67,17 +62,12 @@ const Typewriter = ({ initalText, inputText }) => {
     };
 
     useEffect(() => {
-        if (!inputText || inputText.length === 0) {
-            console.error("Typewriter component: 'inputText' prop is not defined or is an empty array.");
-            return;
-        }
-    
         // Initial text
         changeHeroText(inputText[0]);
-    
+
         // Clear interval on component unmount
         return () => clearInterval(intervalId);
-    }, [intervalId, inputText]); 
+    }, [intervalId, inputText]);
 
     return (
         <p className="text-xl">
