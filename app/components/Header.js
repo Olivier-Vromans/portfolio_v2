@@ -4,7 +4,7 @@ import Button from './Button.js';
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
-    const navItems = ["#Skills", "Projects", "#Work Experience", "Contact"];
+    const navItems = ["#Skills", "#Projects", "#Work Experience", "#Contact"];
 
     return (
         <nav className={`absolute z-50 sm:static top-0 py-6 md:py-3 container flex items-center justify-between flex-wrap gap-5 ${menuOpen ? "bg-background" : "bg-none"} md:bg-background`}>
