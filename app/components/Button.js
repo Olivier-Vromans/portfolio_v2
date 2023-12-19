@@ -1,3 +1,4 @@
+import Link from 'next/link.js';
 import React, { Suspense } from 'react';
 
 /**
@@ -46,19 +47,19 @@ export default function Button({ text, href, icon: IconComponent = null, iconCol
     // check if icon is none or not in icons array
     if (!IconComponent) {
         return (
-            <a
+            <Link
                 {...(href && { href })}
                 className={`min-w-[128px] ${className} ${selectedStyle} ${selectedSize} rounded-full cursor-pointer inline-block text-center`}
                 onClick={onClick} download={download} target={blank ? "_blank" : null}
             >
                 {text}
-            </a>
+            </Link>
         );
 
     }
 
     return (
-        <a
+        <Link
             {...(href && { href })}
             className={`w-full ${className} ${selectedStyle} ${selectedSize} ${IconComponent ? "flex flex-row justify-center" : null} rounded-full cursor-pointer inline-block text-center gap-2`}
             onClick={onClick} download={download} target={blank ? "_blank" : null}
@@ -73,6 +74,6 @@ export default function Button({ text, href, icon: IconComponent = null, iconCol
             ) : (
                 text
             )}
-        </a>
+        </Link>
     );
 }

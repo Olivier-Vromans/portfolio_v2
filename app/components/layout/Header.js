@@ -1,18 +1,19 @@
 "use client"
 import React, { useState } from 'react';
 import Button from '../Button.js';
+import Link from 'next/link.js';
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     // "#Work Experience", "#Contact"
-    const navItems = ["#Skills", "#Projects", ];
+    const navItems = ["#Skills", "#Projects",];
 
     return (
         <nav className={`absolute z-50 sm:static top-0 py-6 md:py-3 container flex items-center justify-between flex-wrap gap-5 ${menuOpen ? "bg-background" : "bg-none"} md:bg-background`}>
             <div className='flex items-center flex-shrink-0'>
-                <a className='text-2xl' href='/'>
+                <Link href='/' className="text-2xl">
                     Olivier Vromans
-                </a>
+                </Link>
             </div>
             <div className='block md:hidden'>
                 <button
@@ -36,10 +37,11 @@ export default function Header() {
             <div className={`w-full md:flex md:items-center md:w-auto mt-8 sm:mt-0 ${menuOpen ? 'block' : 'hidden'}`}>
                 <div className='w-auto flex flex-col items-center md:flex-row gap-4 lg:gap-10 px-10 md:p-0'>
                     {navItems.map((item, index) => (
-                        <a key={index} className='flex justify-center gap-3 self-stretch py-2 rounded-2xl border bg-linearColor border-custom/10 md:border-0 md:bg-none md:shadow-none' href={`${item.toLowerCase().split(' ')[0]}`} onClick={() => setMenuOpen(!menuOpen)}>
+                        <Link key={index} className='flex justify-center gap-3 self-stretch py-2 rounded-2xl border bg-linearColor border-custom/10 md:border-0 md:bg-none md:shadow-none' href={`${item.toLowerCase().split(' ')[0]}`} onClick={() => setMenuOpen(!menuOpen)}>
                             {/* if item got # remove it */}
                             {item.charAt(0) === '#' ? item.slice(1) : item}
-                        </a>
+                        </Link>
+
                     ))}
                     <div className='block pt-5 md:hidden'>
                         <Button text="Download my CV" styleType='outline' href='/assets/downloads/Olivier_Vromans_CV.pdf' download />
