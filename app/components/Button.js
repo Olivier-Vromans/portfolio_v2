@@ -28,6 +28,7 @@ import React, { Suspense } from 'react';
  * @returns {JSX.Element} - Rendered component.
  */
 export default function Button({ text, href, icon: IconComponent = null, iconColor = "inherit", className, styleType = 'default', sizeType = 'default', onClick, download = false, blank = false}) {
+
     const styles = {
         default: "bg-primary text-quaternary stroke-quaternary hover:bg-quaternary hover:text-primary hover:stroke-primary",
         selected: "bg-quaternary text-primary stroke-primary hover:stroke-quaternary",
@@ -47,19 +48,19 @@ export default function Button({ text, href, icon: IconComponent = null, iconCol
     // check if icon is none or not in icons array
     if (!IconComponent) {
         return (
-            <Link
+            <a
                 {...(href && { href })}
                 className={`min-w-[128px] ${className} ${selectedStyle} ${selectedSize} rounded-full cursor-pointer inline-block text-center`}
                 onClick={onClick} download={download} target={blank ? "_blank" : null}
             >
                 {text}
-            </Link>
+            </a>
         );
 
     }
 
     return (
-        <Link
+        <a
             {...(href && { href })}
             className={`w-full ${className} ${selectedStyle} ${selectedSize} ${IconComponent ? "flex flex-row justify-center" : null} rounded-full cursor-pointer inline-block text-center gap-2`}
             onClick={onClick} download={download} target={blank ? "_blank" : null}
@@ -74,6 +75,6 @@ export default function Button({ text, href, icon: IconComponent = null, iconCol
             ) : (
                 text
             )}
-        </Link>
+        </a>
     );
 }
