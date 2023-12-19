@@ -3,6 +3,7 @@ import './globals.css'
 import Header from './components/layout/Header.js'
 import Head from 'next/head.js'
 import Footer from './components/layout/Footer.js'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const notoSans = Noto_Sans({
   subsets: ['latin'],
@@ -24,8 +25,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <SpeedInsights/>
       <Head >
-        
       </Head>
       <body className={`${kaiseiTokumin.variable} ${notoSans.variable} bg-background`}>
         <Header />
